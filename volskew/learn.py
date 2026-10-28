@@ -71,14 +71,16 @@ def _two(chart_fn, text: str, tip: str | None = None, tip_icon: str = "💡"):
             st.info(tip, icon=tip_icon)
 
 
-def render(ticker, info, p, typical, hist, snap, provider, show_chart):
+def render(ticker, info, p, typical, hist, snap, provider, show_chart, pro=False):
     with st.container(border=True):
         st.markdown("**How to use this app**")
         ui.html_block(ui.steps([
             ("Pick a security in the sidebar.",
              "Every screen updates for it, including this lesson."),
-            ("Read the three cards at the top.",
-             "They sum up what options are saying today, in plain English."),
+            (("Read the five numbers at the top." if pro else "Read the three cards at the top."),
+             ("ATM implied vol, its 1-year percentile, 25Δ skew, implied minus realized vol, "
+              "and days to the next event. Hover over any number for its definition." if pro else
+              "They sum up what options are saying today, in plain English.")),
             ("Explore the tabs from left to right.",
              "Surface → compare with the past year → test scenarios → see ideas."),
         ]))

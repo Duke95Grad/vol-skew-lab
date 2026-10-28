@@ -20,7 +20,8 @@ simulated so each one tells a different story:
 ## What's inside
 
 The top of every screen shows three plain-English cards: option prices, the cost of downside
-protection, and what's coming up. Below them are seven tabs:
+protection, and what's coming up. In the advanced view they're replaced by five numbers
+(ATM IV, IV percentile, 25Δ skew, IV − RV, next event). Below them are seven tabs:
 
 - **Start here**: how to use the app, a six-step lesson that uses the selected security, and a quiz.
 - **Surface**: the smile (implied vol by strike) and term structure (by expiry), with a

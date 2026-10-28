@@ -1,0 +1,38 @@
+[theme]
+base = "light"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, sans-serif"
+primaryColor = "#2F4B7C"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5F7FA"
+textColor = "#1F2937"
+borderColor = "#E4E7EC"
+showWidgetBorder = true
+baseRadius = "0.6rem"
+buttonRadius = "0.6rem"
+linkColor = "#2F4B7C"
+blueColor = "#2F6FB5"
+blueBackgroundColor = "#EAF2FB"
+blueTextColor = "#1D4E89"
+orangeColor = "#C47A12"
+orangeBackgroundColor = "#FDF3E3"
+orangeTextColor = "#8A5300"
+greenColor = "#2F8A57"
+greenBackgroundColor = "#EAF6EF"
+greenTextColor = "#22603D"
+redColor = "#C0392B"
+redBackgroundColor = "#FCECEA"
+redTextColor = "#8E2A20"
+grayBackgroundColor = "#F2F4F7"
+grayTextColor = "#475467"
+metricValueFontWeight = 600
+headingFontWeights = [700, 600, 600, 600, 600, 600]
+
+[theme.sidebar]
+backgroundColor = "#F5F7FA"
+secondaryBackgroundColor = "#FFFFFF"
+
+[server]
+headless = true
+
+[client]
+toolbarMode = "minimal"

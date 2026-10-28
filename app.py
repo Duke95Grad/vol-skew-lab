@@ -160,14 +160,20 @@ def pro_strip():
     c = st.columns(5)
     c[0].metric("ATM IV 30d", fmt_metric("iv30", snap["iv30"]["value"]),
                 f"{(snap['iv30']['value'] - snap['iv30']['month_ago']) * 100:+.1f} vs 1M",
-                delta_color="off", border=True)
-    c[1].metric("IV pct (1y)", f"{snap['iv30']['pct']:.0f}", delta_color="off", border=True)
+                delta_color="off", border=True,
+                help="30-day at-the-money implied volatility, with the change over the past month.")
+    c[1].metric("IV pct (1y)", f"{snap['iv30']['pct']:.0f}", delta_color="off", border=True,
+                help="Share of the past year when 30-day IV was below today's level.")
     c[2].metric("25Δ RR", fmt_metric("rr25", snap["rr25"]["value"]),
-                f"{snap['rr25']['pct']:.0f} pct", delta_color="off", delta_arrow="off", border=True)
+                f"{snap['rr25']['pct']:.0f} pct", delta_color="off", delta_arrow="off", border=True,
+                help="30-day 25-delta put IV minus 25-delta call IV, with its 1-year percentile. "
+                     "Positive = puts richer.")
     c[3].metric("IV − RV", fmt_metric("vrp", snap["vrp"]["value"]),
-                f"{snap['vrp']['pct']:.0f} pct", delta_color="off", delta_arrow="off", border=True)
+                f"{snap['vrp']['pct']:.0f} pct", delta_color="off", delta_arrow="off", border=True,
+                help="30-day implied minus 20-day realized volatility, with its 1-year percentile.")
     c[4].metric("Next event", f"{event[1]:.0f}d" if event else "None", event[0] if event else None,
-                delta_color="off", delta_arrow="off", border=True)
+                delta_color="off", delta_arrow="off", border=True,
+                help="Calendar days to the next scheduled event. Dates are estimates.")
 
 
 if pro:
@@ -185,7 +191,7 @@ tabs = st.tabs([":material/school: Start here", ":material/ssid_chart: Surface",
 # 1. Start here
 # ============================================================================
 with tabs[0]:
-    learn.render(ticker, info, p, typical, hist, snap, provider, show_chart)
+    learn.render(ticker, info, p, typical, hist, snap, provider, show_chart, pro)
 
 # ============================================================================
 # 2. Surface
